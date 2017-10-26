@@ -43,6 +43,7 @@ public class GestBanco {
         
         ArrayList<String> z = new ArrayList<>();
         String r = null;
+        try{
         for(Gerente ger : bank.listGerentes()){
             for(int i = 0; i < ger.getClientes().size(); i++){
                 for(int k = 0; k < ger.getClientes().get(i).getCuentas().size(); k++)
@@ -51,6 +52,10 @@ public class GestBanco {
                     z.add(r);
             }
         }
+        }catch(Exception e){
+            System.out.println("No se puede mostrar la informacion");
+        }
+        bank.toString();
         
         
         File fl = null;
